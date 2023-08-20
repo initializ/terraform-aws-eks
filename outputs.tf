@@ -22,6 +22,11 @@ output "cluster_id" {
   value       = module.eks_cluster.cluster_id
 }
 
+output "cluster_name" {
+  description = "The name/id of the EKS cluster. Will block on cluster creation until the cluster is really ready"
+  value       = module.eks_cluster.cluster_name
+}
+
 output "cluster_oidc_issuer_url" {
   description = "The URL on the EKS cluster for the OpenID Connect identity provider"
   value       = module.eks_cluster.cluster_oidc_issuer_url

@@ -1,12 +1,12 @@
 variable "environment" {
   type        = string
   description = "The environment name"
-  default     = "devgurus-dev"
+  default     = "initializ-sandbox"
 }
 variable "kubernetes_version" {
   type        = string
   description = "The Kubernetes version of the Kubernetes control plane"
-  default     = "1.21"
+  default     = "1.27"
 }
 
 variable "self_managed_node_groups" {
@@ -47,6 +47,12 @@ variable "manage_aws_auth_configmap" {
 variable "create_aws_auth_configmap" {
   type        = bool
   description = "This option toogles aws-auth creation. It should only be enabled when using self-managed nodes"
+  default     = false
+}
+
+variable "control_plane_public_access" {
+  type        = bool
+  description = "Indicates whether or not the Amazon EKS public API server endpoint is enabled"
   default     = false
 }
 
