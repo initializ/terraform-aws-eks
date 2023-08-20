@@ -2,10 +2,12 @@ data "aws_availability_zones" "available" {}
 
 data "aws_eks_cluster" "cluster" {
   name = module.eks_cluster.cluster_name
+  depends_on = [module.eks_cluster.cluster_name]
 }
 
 data "aws_eks_cluster_auth" "this" {
   name = module.eks_cluster.cluster_name
+  depends_on = [module.eks_cluster.cluster_name]
 }
 
 module "eks_cluster" {
