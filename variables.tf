@@ -56,6 +56,11 @@ variable "control_plane_public_access" {
   default     = false
 }
 
+variable "kms_key_administrators" {
+  type        = list(string)
+  description = "A list of IAM ARNs for key administrators"
+}
+
 variable "map_roles" {
   description = "Additional IAM roles to add to the aws-auth configmap."
   type = list(object({
